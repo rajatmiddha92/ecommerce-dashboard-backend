@@ -8,6 +8,11 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 let port=process.env.PORT || 4000
+
+app.get('/',(req,res)=>{
+    res.send('OK')
+})
+
 app.post("/register", async (req, res) => {
   try {
     let user = new users(req.body);
