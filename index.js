@@ -7,7 +7,7 @@ const jwt = require("jsonwebtoken");
 const app = express();
 app.use(express.json());
 app.use(cors());
-
+let port=process.env.PORT || 4000
 app.post("/register", async (req, res) => {
   try {
     let user = new users(req.body);
@@ -159,4 +159,4 @@ function verifyToken(req,res,next){
     }
 
 }
-app.listen(4000);
+app.listen(port);
